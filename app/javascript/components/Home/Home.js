@@ -3,7 +3,7 @@ import { Jumbotron } from './Jumbotron';
 import { Table } from './Table/Table';
 
 export const Home = () => {
-  const project_modules = useState([
+  const [project_modules, setProjectModules] = useState([
     {
       id: 1,
       title: 'Diversify Computer Science',
