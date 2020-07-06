@@ -5,28 +5,24 @@ import { Jumbotron } from './Jumbotron';
 import { Table } from './Table/Table';
 
 export const Home = () => {
-  const [project_modules, setProjectModules] = useState([
-    {
-      id: 1,
-      title: 'Diversify Computer Science',
-      description: 'lorem ipsum',
-      active: false,
-    },
-    {
-      id: 2,
-      title: 'Cannoli Windsor',
-      description: 'lorem ipsum',
-      active: false,
-    },
-    { id: 3, title: 'UWinMaps', description: 'lorem ipsum', active: false },
-    { id: 4, title: 'CafeKove', description: 'lorem ipsum', active: false },
-  ]);
+  const [project_modules, setProjectModules] = useState([]);
 
   useEffect(() => {
     axios
       .get('/projects.json')
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        let result = [];
+        response.data.data.map((item) => {
+          result.push({
+            id: item.id,
+            title: item.title,
+            description: item.description,
+            url: item.url,
+            active: false,
+          });
+        });
+        setProjectModules(result);
       })
       .catch((error) => {
         console.log(error);
@@ -42,7 +38,9 @@ export const Home = () => {
     _project_modules.map((data) => {
       data.active = false;
     });
+    console.log(item.active);
     item.active = !item.active;
+    console.log(item.active);
 
     _project_modules[item.id - 1] = item;
     setProjectModules(_project_modules);

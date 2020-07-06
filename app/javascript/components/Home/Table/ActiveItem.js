@@ -25,7 +25,6 @@ export const ActiveItem = (props) => {
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <Video />
-
                 <div className="pt-4 pb-4">
                   <h4>{props.title}</h4>
                   <p>{props.description}</p>
