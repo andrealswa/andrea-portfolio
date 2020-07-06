@@ -31,7 +31,10 @@ export const Item = (props) => {
                   <h4>{props.title}</h4>
                   <p>{props.description}</p>
                   <div className="cta-wrapper">
-                    <Button className="btn cta-btn">
+                    <Button
+                      onClick={() => props.handleVideoChange(props.item, event)}
+                      className="btn cta-btn"
+                    >
                       Watch my System Interaction Video
                     </Button>
                   </div>

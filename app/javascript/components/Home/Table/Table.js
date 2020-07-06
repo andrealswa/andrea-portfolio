@@ -8,6 +8,8 @@ export const Table = (props) => {
     if (data.active === true) {
       return (
         <ActiveItem
+          item={data}
+          handleVideoChange={props.handleVideoChange}
           key={key}
           title={data.title}
           description={data.description}
@@ -15,7 +17,13 @@ export const Table = (props) => {
       );
     } else {
       return (
-        <Item key={key} title={data.title} description={data.description} />
+        <Item
+          item={data}
+          handleVideoChange={props.handleVideoChange}
+          key={key}
+          title={data.title}
+          description={data.description}
+        />
       );
     }
   });
