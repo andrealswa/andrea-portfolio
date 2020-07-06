@@ -13,6 +13,8 @@ export const Table = (props) => {
           key={key}
           title={data.title}
           description={data.description}
+          url={data.url}
+          github_link={data.github_link}
         />
       );
     } else {
@@ -23,6 +25,8 @@ export const Table = (props) => {
           key={key}
           title={data.title}
           description={data.description}
+          url={data.url}
+          github_link={data.github_link}
         />
       );
     }
@@ -34,7 +38,7 @@ export const Table = (props) => {
     <div className="pt-5 pb-5">
       <div className="container">
         <div className="text-center">
-          <h2 className="pt-4 pb-4">View my UWinMaps Project</h2>
+          <h2 className="pt-4 pb-4">View my Projects</h2>
         </div>
         {items}
       </div>

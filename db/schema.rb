@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_141539) do
     t.string "title"
     t.string "description"
     t.string "url"
+    t.string "github_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

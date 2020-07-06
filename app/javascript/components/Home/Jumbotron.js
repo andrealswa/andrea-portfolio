@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import andrea from '../../../assets/images/andrea-portfolio.png';
 
 const Section = styled.section`
   background-color: #d74234;
@@ -43,7 +44,7 @@ export const Jumbotron = () => {
           <div className="row">
             <div className="col col-sm-12 col-md-5">
               <div className="pt-4 mt-4">
-                <Header>Projects</Header>
+                <Header>About Me</Header>
                 <Subhead>Here is some of my past work</Subhead>
                 <div className="cta-wrapper">
                   <Button className="btn fancy-btn">View Projects</Button>
@@ -52,14 +53,7 @@ export const Jumbotron = () => {
             </div>
             <div className="col col-sm-12 col-md-7">
               <div className="pt-4 mt-4 text-center">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/F_CmyZqgf38"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <img width="250px" height="100%" src={andrea}></img>
               </div>
             </div>
           </div>
