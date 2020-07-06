@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import { Jumbotron } from './Jumbotron';
 import { Table } from './Table/Table';
 
@@ -19,6 +21,17 @@ export const Home = () => {
     { id: 3, title: 'UWinMaps', description: 'lorem ipsum', active: false },
     { id: 4, title: 'CafeKove', description: 'lorem ipsum', active: false },
   ]);
+
+  useEffect(() => {
+    axios
+      .get('/projects.json')
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleVideoChange = (item, event) => {
     event.preventDefault();
