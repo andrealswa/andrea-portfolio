@@ -1,10 +1,23 @@
 import React from 'react';
 import { Item } from './Item';
+import { ActiveItem } from './ActiveItem';
 
 export const Table = (props) => {
   const items = props.project_modules.map((data, key) => {
     console.log(data, key);
-    return <Item key={key} title={data.title} description={data.description} />;
+    if (data.active === true) {
+      return (
+        <ActiveItem
+          key={key}
+          title={data.title}
+          description={data.description}
+        />
+      );
+    } else {
+      return (
+        <Item key={key} title={data.title} description={data.description} />
+      );
+    }
   });
   items.forEach((data) => {
     console.log(data);
