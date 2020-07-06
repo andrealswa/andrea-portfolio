@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import { Jumbotron } from './Jumbotron';
 import { Table } from './Table/Table';
+import { object } from 'prop-types';
 
 export const Home = () => {
   const [project_modules, setProjectModules] = useState([]);
@@ -13,7 +14,7 @@ export const Home = () => {
       .then((response) => {
         // console.log(response);
         let result = [];
-        response.data.data.map((item) => {
+        response.data.data.forEach((item) => {
           result.push({
             id: item.id,
             title: item.title,
@@ -32,15 +33,19 @@ export const Home = () => {
   const handleVideoChange = (item, event) => {
     event.preventDefault();
     // console.log('In handleVideoChange');
-    // console.log(item.title);
-    let _project_modules = [...project_modules];
+    console.log(item.active);
+    let _project_modules = [
+      ...project_modules.map((object) => {
+        return { ...object };
+      }),
+    ];
     // console.log(_project_modules);
-    _project_modules.map((data) => {
+    _project_modules.forEach((data) => {
       data.active = false;
     });
     console.log(item.active);
     item.active = !item.active;
-    console.log(item.active);
+    // console.log(item.active);
 
     _project_modules[item.id - 1] = item;
     setProjectModules(_project_modules);
